@@ -1,6 +1,4 @@
-#include <stdlib.h>
 #include <stdio.h>
-
 /**
  * main - main block
  * Description: computes and prints the sum of all the multiples of 3 or
@@ -18,6 +16,7 @@ int main(void)
 		a = b;
 		b = next;
 		printf("%lu", next);
+
 		if (i < 97)
 			printf(", ");
 		i++;
