@@ -1,0 +1,1 @@
+C - poinnters arrays strings
