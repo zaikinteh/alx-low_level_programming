@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _memset - fills memory with a constant byt.
+ **_memset - fills memory with a constant byt.
  * @s: memory area to be filled
  * @b: char to copy
  * @n: number of times to copt b
