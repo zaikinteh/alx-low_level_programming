@@ -1,45 +1,37 @@
 #include "lists.h"
 /**
- * add_node_end -  adds a new node at the end of a list_t list.
- * @head: Pointer with the address of the pointer to the first node
- * @str: Pointer with the address of the string
- * Return: adress of the node created
- */
+ * add_node_end - Add a new node at the end of a list
+ * @head: Address of the first node of a list
+ * @str: Address of the string to insert into the new node
+ * Return: Address of the new node
+ **/
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *p, *temp;
-	unsigned int n;
-
-	p = malloc(sizeof(list_t));
-	if (p == NULL)
-	{
-		return (NULL);
-	}
-	p->str = strdup(str);
-	if (p->str == NULL)
-	{
-		free(p);
-		return (NULL);
-	}
-	n = 0;
-	while (str[n] != '\0')
-	{
-		n++;
-	}
-	p->len = n;
-	p->next = NULL;
-	if (*head == NULL)
-	{
-		*head = p;
-	}
-	else
-	{
-		temp = *head;
-		while (temp->next != 0)
-		{
-			temp = temp->next;
-		}
-		temp->next = p;
-	}
-	return (p);
+list_t *temp, *temp2;
+unsigned int length = 0;
+if (str == NULL)
+return (NULL);
+temp = malloc(sizeof(list_t));
+if (temp == NULL)
+return (NULL);
+temp->str = strdup(str);
+if (temp->str == NULL)
+{
+free(temp);
+return (NULL);
+}
+while (str[length])
+length++;
+temp->len = length;
+temp->next = NULL;
+if (*head == NULL)
+{
+*head = temp;
+return (temp);
+}
+temp2 = *head;
+while (temp2->next)
+temp2 = temp2->next;
+temp2->next = temp;
+return (temp);
 }
